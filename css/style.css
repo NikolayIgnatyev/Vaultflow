@@ -24,6 +24,7 @@ ul {
 
 .page {
 	position: relative;
+	overflow: hidden;
 }
 
 .header {
@@ -49,8 +50,10 @@ ul {
 	font-size: 16px;
 	line-height: 150%;
 	max-width: 200px;
+	max-width: 200px;
 	max-height: 48px;
 	transition: 0.3s;
+	text-wrap: nowrap;
 	text-wrap: nowrap;
 }
 
@@ -90,6 +93,7 @@ ul {
 
 .header__logo {
 	margin-right: auto;
+	margin-right: auto;
 }
 
 .header__nav-menu {
@@ -97,6 +101,11 @@ ul {
 	align-items: center;
 	gap: 32px;
 	transition: 0.3s;
+	overflow: auto;
+}
+
+body.menu-open{
+	overflow: hidden;
 }
 
 .btn-close {
@@ -105,7 +114,7 @@ ul {
 	max-width: 40px;
 	background-color: transparent;
 	border: none;
-	position: relative;
+	position: absolute;
 	transition: 0.3s;
 	display: none;
 	justify-content: center;
@@ -119,10 +128,11 @@ ul {
 }
 
 .icon-close {
-	height: 40px;
-	width: 10px;
+	height: 20px;
+	width: 5px;
 	position: absolute;
 	background-color: white;
+	border-radius: 50%;
 }
 
 .left {
@@ -163,6 +173,28 @@ ul {
 	background-color: #0B0121;
 }
 
+.btn-burger {
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	aspect-ratio: 1/1;
+	display: none;
+	gap: 5px 0;
+	flex-direction: column;
+	transition: 0.3s;
+}
+
+
+.icon-burger {
+	background-color: white;
+	height: 20%;
+	width: 100%;
+}
+
+.main {
+	background-color: #0B0121;
+}
+
 .hero {
 	position: relative;
 	width: 100%;
@@ -171,6 +203,7 @@ ul {
 	align-items: center;
 	background-image: url(../images/hero-background.jpg);
 	background-size: cover;
+	background-position: top;
 	background-position: top;
 }
 
@@ -213,6 +246,8 @@ ul {
 .hero__title {
 	width: 100%;
 	max-width: 760px;
+	width: 100%;
+	max-width: 760px;
 	font-weight: 500;
 	font-size: 80px;
 	line-height: 100%;
@@ -225,6 +260,8 @@ ul {
 }
 
 .hero__text {
+	width: 100%;
+	max-width: 500px;
 	width: 100%;
 	max-width: 500px;
 	font-weight: 400;
@@ -330,11 +367,13 @@ ul {
 	left: 0;
 	top: 0;
 	pointer-events: none;
+	pointer-events: none;
 }
 
 .title-block__title {
 	width: 100%;
 	max-width: 450px;
+	padding: 24px 10px 10px 10px;
 	padding: 24px 10px 10px 10px;
 	font-weight: 500;
 	font-size: 48px;
@@ -358,6 +397,7 @@ ul {
 	width: 100%;
 	display: flex;
 	justify-content: flex-start;
+	gap: 24px;
 	gap: 24px;
 }
 
@@ -461,9 +501,11 @@ ul {
 	width: 100%;
 	max-width: 460px;
 	margin-right: auto;
+	margin-right: auto;
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
+	justify-content: space-between;
 	justify-content: space-between;
 }
 
@@ -472,9 +514,12 @@ ul {
 	border-radius: 20px;
 	max-width: 467px;
 	align-self: center;
+	max-width: 467px;
+	align-self: center;
 }
 
 .card_img img {
+	width: 100%;
 	width: 100%;
 }
 
@@ -555,11 +600,29 @@ ul {
 }
 
 .footer__content-bottom {
+	width: 100%;
 	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	padding: 64px 0;
+	gap: 16px;
+}
+
+.footer__content {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 100px;
+}
+
+.footer__content-bottom {
+	display: flex;
+	flex-direction: row;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
+.footer__container-items {
 .footer__container-items {
 	display: flex;
 	justify-content: flex-start;
@@ -575,8 +638,10 @@ ul {
 	flex-direction: column;
 	width: 100%;
 	gap: 6px;
+	gap: 6px;
 }
 
+.contacts {
 .contacts {
 	display: flex;
 	width: 100%;
@@ -596,6 +661,7 @@ ul {
 }
 
 .footer_text {
+.footer_text {
 	width: 100%;
 	font-weight: 300;
 	font-size: 18px;
@@ -604,12 +670,14 @@ ul {
 }
 
 .copyright-notice {
+.copyright-notice {
 	font-weight: 300;
 	font-size: 16px;
 	letter-spacing: -0.01em;
 	color: #939393;
 }
 
+.footer__logo {
 .footer__logo {
 	height: 100%;
 	display: flex;
@@ -621,10 +689,11 @@ ul {
 	.header__nav-menu {
 		z-index: 1;
 		position: absolute;
-		transform: translateY(-100%);
+		transform: translateX(100%);
 		top: 0;
 		right: 0;
 		display: flex;
+		height: 100vh;
 		flex-direction: column;
 		width: 60%;
 		padding: 20px;
@@ -841,9 +910,7 @@ ul {
 
 	.header__nav-menu{
 		padding: 5px;
-		justify-content: space-between;
 		width: 80%;
-		height: 100vh;
 	}
 
 	.header__nav-menu-link{
